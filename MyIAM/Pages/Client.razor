@@ -1,0 +1,48 @@
+﻿@page "/client"
+@using MyIAM.AppService.Contracts;
+@using MyIAM.AppService.Resources.MyClient;
+@using MyIAM.Domain;
+@inject IGenericAppService<MyClient, MyClientOutPut,MyClientListOutPut, MyClientInPut> ClientService
+
+<PageTitle>Clients</PageTitle>
+
+<h1>Clients</h1>
+
+
+@if (clients == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                @foreach (var clientProps in client.GetType().GetProperties())
+                {
+                    <td>@clientProps.Name</td>
+                }
+                <td>Actions</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var client in clients)
+            {
+                <tr>
+                    <td>@client.Id</td>
+                    <td>@client.ClientId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<MyClientListOutPut>? clients;
+    private MyClientListOutPut client = new MyClientListOutPut();
+
+    protected override async Task OnInitializedAsync()
+    {
+        clients = await ClientService.GetAll();
+    }
+}

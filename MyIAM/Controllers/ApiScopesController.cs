@@ -10,9 +10,9 @@ namespace MyIAM.Controllers
     [ApiController]
     public class ApiScopesController : ControllerBase
     {
-        private readonly IGenericAppService<MyApiScope, MyApiScopeOutPut, MyApiScopeInPut> _appService;
+        private readonly IGenericAppService<MyApiScope, MyApiScopeOutPut, MyApiScopeListOutPut, MyApiScopeInPut> _appService;
 
-        public ApiScopesController(IGenericAppService<MyApiScope, MyApiScopeOutPut, MyApiScopeInPut> appService)
+        public ApiScopesController(IGenericAppService<MyApiScope, MyApiScopeOutPut,MyApiScopeListOutPut, MyApiScopeInPut> appService)
         {
             _appService = appService;
         }

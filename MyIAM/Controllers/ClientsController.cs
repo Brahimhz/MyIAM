@@ -10,9 +10,9 @@ namespace MyIAM.Controllers
     [ApiController]
     public class ClientsController : ControllerBase
     {
-        private readonly IGenericAppService<MyClient, MyClientOutPut, MyClientInPut> _appService;
+        private readonly IGenericAppService<MyClient, MyClientOutPut, MyClientListOutPut, MyClientInPut> _appService;
 
-        public ClientsController(IGenericAppService<MyClient, MyClientOutPut, MyClientInPut> appService)
+        public ClientsController(IGenericAppService<MyClient, MyClientOutPut,MyClientListOutPut, MyClientInPut> appService)
         {
             _appService = appService;
         }

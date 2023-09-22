@@ -16,6 +16,7 @@ namespace MyIAM.Mapping
 
             //AppService
             CreateMap<MyClient, MyClientOutPut>();
+            CreateMap<MyClient, MyClientListOutPut>();
             CreateMap<MyClientInPut, MyClient>()
                 .AfterMap((s,d,c) =>
                 {
@@ -24,12 +25,15 @@ namespace MyIAM.Mapping
                 });
 
             CreateMap<MyApiScope, MyApiScopeOutPut>();
+            CreateMap<MyApiScope, MyApiScopeListOutPut>();
             CreateMap<MyApiScopeInPut, MyApiScope>();
 
             CreateMap<MyApiResource, MyApiResourceOutPut>();
+            CreateMap<MyApiResource, MyApiResourceListOutPut>();
             CreateMap<MyApiResourceInPut, MyApiResource>();
 
             CreateMap<MyIdentityResource, MyIdentityResourceOutPut>();
+            CreateMap<MyIdentityResource, MyIdentityResourceListOutPut>();
             CreateMap<MyIdentityResourceInPut, MyIdentityResource>()
                 .AfterMap((s,d,c) =>
                 {

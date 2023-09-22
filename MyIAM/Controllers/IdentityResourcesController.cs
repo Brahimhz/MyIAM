@@ -10,9 +10,9 @@ namespace MyIAM.Controllers
     [ApiController]
     public class IdentityResourcesController : ControllerBase
     {
-        private readonly IGenericAppService<MyIdentityResource, MyIdentityResourceOutPut, MyIdentityResourceInPut> _appService;
+        private readonly IGenericAppService<MyIdentityResource, MyIdentityResourceOutPut, MyIdentityResourceListOutPut, MyIdentityResourceInPut> _appService;
 
-        public IdentityResourcesController(IGenericAppService<MyIdentityResource, MyIdentityResourceOutPut, MyIdentityResourceInPut> appService)
+        public IdentityResourcesController(IGenericAppService<MyIdentityResource, MyIdentityResourceOutPut,MyIdentityResourceListOutPut, MyIdentityResourceInPut> appService)
         {
             _appService = appService;
         }

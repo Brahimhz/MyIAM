@@ -9,9 +9,9 @@ namespace MyIAM.Controllers
     [ApiController]
     public class ApiResourcesController : ControllerBase
     {
-        private readonly IGenericAppService<MyApiResource, MyApiResourceOutPut, MyApiResourceInPut> _appService;
+        private readonly IGenericAppService<MyApiResource, MyApiResourceOutPut, MyApiResourceListOutPut, MyApiResourceInPut> _appService;
 
-        public ApiResourcesController(IGenericAppService<MyApiResource, MyApiResourceOutPut, MyApiResourceInPut> appService)
+        public ApiResourcesController(IGenericAppService<MyApiResource, MyApiResourceOutPut,MyApiResourceListOutPut, MyApiResourceInPut> appService)
         {
             _appService = appService;
         }

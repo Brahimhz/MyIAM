@@ -2,14 +2,14 @@
 
 namespace MyIAM.AppService.Contracts
 {
-    public interface IGenericAppService<T, TGetResource, TSetResource>
+    public interface IGenericAppService<T, TOutPutResource, TListOutPutResource, TInPutResource>
         where T : class , IAMDatabaseKey
     {
-        Task<TGetResource> GetById(Guid id);
-        Task<List<TGetResource>> GetAll();
+        Task<TOutPutResource> GetById(Guid id);
+        Task<List<TListOutPutResource>> GetAll();
 
-        Task<TGetResource> Add(TSetResource entity);
-        Task<TGetResource> Modify(Guid id, TSetResource entity);
+        Task<TOutPutResource> Add(TInPutResource entity);
+        Task<TOutPutResource> Modify(Guid id, TInPutResource entity);
         Task<Guid> Delete(Guid id);
     }
 }

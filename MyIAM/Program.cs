@@ -50,7 +50,7 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositor
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-builder.Services.AddTransient(typeof(IGenericAppService<,,>), typeof(GenericAppService<,,>));
+builder.Services.AddTransient(typeof(IGenericAppService<,,,>), typeof(GenericAppService<,,,>));
 
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
