@@ -1,13 +1,22 @@
-﻿@page "/client"
+﻿<!-- Client.razor -->
+@page "/client"
 @using MyIAM.AppService.Contracts;
 @using MyIAM.AppService.Resources.MyClient;
 @using MyIAM.Domain;
 @inject IGenericAppService<MyClient, MyClientOutPut,MyClientListOutPut, MyClientInPut> ClientService
+@using static MyIAM.Shared.Dialog;
+
 
 <PageTitle>Clients</PageTitle>
 
 <h1>Clients</h1>
 
+<button @onclick="ShowDialog">Show Dialog</button>
+
+<Dialog @ref="dialogRef">
+    <p>This is the content of the dialog.</p>
+    <button @onclick="CloseDialog">Close</button>
+</Dialog>
 
 @if (clients == null)
 {
@@ -45,4 +54,19 @@ else
     {
         clients = await ClientService.GetAll();
     }
+
+    //Dialog
+    private Dialog dialogRef;
+
+    private void ShowDialog()
+    {
+        Console.WriteLine("ShowDialog");
+        dialogRef.Show();
+    }
+
+    private void CloseDialog()
+    {
+        dialogRef.Close();
+    }
+
 }
