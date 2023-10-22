@@ -5,15 +5,15 @@ VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyIAM", "MyIAM\MyIAM.csproj", "{3679F715-143D-4102-B4E7-5B001005B6A8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyIAM.AdminApp", "MyIAM.AdminApp\MyIAM.AdminApp.csproj", "{3A05FB59-F5CA-44F8-9D22-227D75437773}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyIAM.Admin.Web", "MyIAM.Admin.Web\MyIAM.Admin.Web.csproj", "{3A05FB59-F5CA-44F8-9D22-227D75437773}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyIAM.ClientApp", "MyIAM.ClientApp\MyIAM.ClientApp.csproj", "{730CF800-D594-4801-BCC7-A2B07123BB0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyIAM.Core", "MyIAM.Core\MyIAM.Core.csproj", "{D48C04E1-3FB7-4C53-95B5-D9F875621D49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyIAM.Core", "MyIAM.Core\MyIAM.Core.csproj", "{D48C04E1-3FB7-4C53-95B5-D9F875621D49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyIAM.Admin.Application", "MyIAM.Admin.Application\MyIAM.Admin.Application.csproj", "{AE7A8CC5-3D8D-4F13-9386-44571F86D8EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyIAM.Application", "MyIAM.Application\MyIAM.Application.csproj", "{AE7A8CC5-3D8D-4F13-9386-44571F86D8EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyIAM.Persistance", "MyIAM.Persistance\MyIAM.Persistance.csproj", "{22129D10-CC34-45C6-91A4-268F7BF1F671}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyIAM.Persistance", "MyIAM.Persistance\MyIAM.Persistance.csproj", "{22129D10-CC34-45C6-91A4-268F7BF1F671}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyIAM.Client.Web", "MyIAM.Client.Web\MyIAM.Client.Web.csproj", "{70ADE188-0AFA-4AC1-9D72-B6B819990E99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,6 @@ Global
 		{3A05FB59-F5CA-44F8-9D22-227D75437773}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A05FB59-F5CA-44F8-9D22-227D75437773}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A05FB59-F5CA-44F8-9D22-227D75437773}.Release|Any CPU.Build.0 = Release|Any CPU
-		{730CF800-D594-4801-BCC7-A2B07123BB0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{730CF800-D594-4801-BCC7-A2B07123BB0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{730CF800-D594-4801-BCC7-A2B07123BB0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{730CF800-D594-4801-BCC7-A2B07123BB0B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D48C04E1-3FB7-4C53-95B5-D9F875621D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D48C04E1-3FB7-4C53-95B5-D9F875621D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D48C04E1-3FB7-4C53-95B5-D9F875621D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{22129D10-CC34-45C6-91A4-268F7BF1F671}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22129D10-CC34-45C6-91A4-268F7BF1F671}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22129D10-CC34-45C6-91A4-268F7BF1F671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70ADE188-0AFA-4AC1-9D72-B6B819990E99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70ADE188-0AFA-4AC1-9D72-B6B819990E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70ADE188-0AFA-4AC1-9D72-B6B819990E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70ADE188-0AFA-4AC1-9D72-B6B819990E99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
