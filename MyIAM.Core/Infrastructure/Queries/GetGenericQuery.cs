@@ -8,6 +8,6 @@ using System.Threading.Tasks;
 
 namespace MyIAM.Core.Infrastructure.Queries
 {
-    public record GetGenericQuery<T>(Expression<Func<T,bool>>? condition) : IRequest<T>;
-    public record GetGenericListQuery<T>(Expression<Func<T,bool>>? condition) : IRequest<List<T>>;
+    public record GetGenericByPropQuery<T>(Expression<Func<T,bool>>? condition) : IRequest<T?>;
+    public record GetGenericListQuery<T>(Expression<Func<T,bool>>? condition) : IRequest<IEnumerable<T>>;
 }

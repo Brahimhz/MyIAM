@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyIAM.Core.Databases.Contracts;
 using MyIAM.Core.Domain;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace MyIAM.Persistance.Repository
@@ -16,9 +17,12 @@ namespace MyIAM.Persistance.Repository
             _dbSet = context.Set<T>();
         }
 
-        public async Task<T?> GetByIdAsync(Guid id)
+        public async Task<T?> GetByPropAsync(Expression<Func<T, bool>>? condition)
         {
-            return await _dbSet.FirstOrDefaultAsync(e => e.Id == id);
+            return
+                condition is not null
+                ? await _dbSet.FirstOrDefaultAsync(condition)
+                : await _dbSet.FirstOrDefaultAsync();
         }
 
         public async Task<IEnumerable<T>> GetAllAsync()
@@ -31,9 +35,12 @@ namespace MyIAM.Persistance.Repository
             return await _dbSet.FirstOrDefaultAsync(predicate);
         }
 
-        public async Task<IEnumerable<T>> WhereAsync(Expression<Func<T, bool>> predicate)
+        public async Task<IEnumerable<T>> WhereAsync(Expression<Func<T, bool>>? predicate)
         {
-            return await _dbSet.Where(predicate).ToListAsync();
+            return
+                predicate is not null
+                ? await _dbSet.Where(predicate).ToListAsync()
+                : await _dbSet.ToListAsync();
         }
 
         public async Task InsertAsync(T entity)

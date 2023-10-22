@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyIAM.Core.Infrastructure.Commands
 {
-    public record AddGenericCommand<T>(T input) : IRequest<T> where T : class, IAMDatabaseKey;
-    public record ModifyGenericCommand<T>(T input,Expression<Func<T, bool>>? condition) : IRequest<T> where T : class, IAMDatabaseKey;
-    public record DeleteGenericCommand<T>(T input,Expression<Func<T, bool>>? condition) : IRequest<bool> where T : class, IAMDatabaseKey;
+    public record AddGenericCommand<T>(T input) : IRequest<Task> where T : class, IAMDatabaseKey;
+    public record ModifyGenericCommand<T>(T input) : IRequest<Unit> where T : class, IAMDatabaseKey;
+    public record DeleteGenericCommand<T>(T input) : IRequest<Task> where T : class, IAMDatabaseKey;
 }
